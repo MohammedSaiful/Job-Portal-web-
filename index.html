@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="icon" type="image/jpg" href="logo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <script src="validation.js" defer></script>
+</head>
+
+<body>
+    <h3 class="center-text">Job Portal</h3>
+
+    <div class="main-container">
+        <div>
+
+            <!-- Login Form -->
+            <div class="login-container" id="loginForm">
+                <h3 class="center-text">Login</h3>
+                <div class="center-form">
+                    <form action="Login.php" method="post" onsubmit="return validateLogin()">
+
+                        <div class="center-form">
+                            <input type="radio" id="loginJobSeeker" name="loginUserType" value="jobseeker" checked>
+                            <label for="loginJobSeeker">Job Seeker</label>
+                            <input type="radio" id="loginEmployer" name="loginUserType" value="employer">
+                            <label for="loginEmployer">Employer</label><br>
+                        </div>
+
+                        <label for="logemail">Email:</label><br>
+                        <input type="text" id="logemail" name="logemail"
+                            placeholder="Write your email address here"><br>
+
+                        <label for="logpswd">Password:</label><br>
+                        <input type="password" id="logpwd" name="logpwd" placeholder="Write the password"><br>
+
+                        <p class="center-form" id="log_message"></p>
+                        <div class="center-form">
+                            <input type="submit" name="Login" value="Login"><br>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="toggle-link" onclick="toggleForms('register')">Don't have an account? Register</div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="registration-container hidden" id="registerForm">
+                <div id="data">
+                    <h3 class="center-text">Registration</h3>
+                    <div class="center-form">
+                        <form action="external.php" method="post" onsubmit="return validation()">
+                            <div class="center-form">
+                                <input type="radio" id="registerJobSeeker" name="registerUserType" value="jobseeker" checked>
+                                <label for="registerJobSeeker">Job Seeker</label>
+                                <input type="radio" id="registerEmployer" name="registerUserType" value="employer">
+                                <label for="registerEmployer">Employer</label><br>
+                            </div>
+                            
+                            <label for="fname">Full Name:</label><br>
+                            <input type="text" id="fname" name="fname"
+                                placeholder="Please write your full name here"><br>
+
+                            <label for="email">Email:</label><br>
+                            <input type="text" id="email" name="email"
+                                placeholder="Please write your email address here"><br>
+
+                            <label for="pwd">Password:</label><br>
+                            <input type="password" id="pwd" name="pwd"
+                                placeholder="Please create a strong password"><br>
+
+                            <label for="confirm_pwd">Confirm Password:</label><br>
+                            <input type="password" id="confirm_pwd" name="confirm_pwd"
+                                placeholder="Write your password for confirmation"><br>
+
+                            <label for="DOB">Date of birth :</label><br>
+                            <input type="date" id="DOB" name="DOB"><br>
+
+                            <label for="country">Country Name :</label><br>
+                            <select name="country" id="country">
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Afganistan">Afganistan</option>
+                                <option value="Australia">Australia</option>
+                                <option value="India">India</option>
+                                <option value="England">England</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="Nepal">Nepal</option>
+                            </select><br>
+
+                            <label>Gender :</label>
+                            <input type="radio" id="male" name="Gender" value="male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="Gender" value="female">
+                            <label for="female">Female</label><br>
+
+                            <textarea name="description" placeholder="Enter your description..."></textarea>
+
+                            <div class="center-form">
+                                <input type="checkbox" id="terms_conditions" name="terms_conditions" value="Agree">
+                                <label for="terms_conditions">Terms of Service and Privacy Policy</label>
+                            </div>
+                            <div class="center-text" id="message"></div>
+                            <div class="center-form">
+                                <input type="submit" name="submit" value="submit"><br>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="toggle-link" onclick="toggleForms('login')">Already have an account? Login</div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -31,7 +31,7 @@ function validation() {
     // Validate name
     if (!regexname.test(uname.value.trim())) {
         message.style.color = "red";
-        message.innerHTML = "Name can only contain letters, spaces, dots, and hyphens.";
+        message.innerHTML = "Name can't contain numbers";
         return false;
     }
 
@@ -86,16 +86,11 @@ function validateLogin() {
     const email2 = document.getElementById("logemail").value.trim();
     const password2 = document.getElementById("logpwd").value.trim();
     const log_message = document.getElementById("log_message");
-    const userType = document.querySelector('input[name="loginUserType"]:checked');
+   // const userType = document.querySelector('input[name="loginUserType"]:checked');
 
 
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    if (!userType) {
-        log_message.style.color = "red";
-        log_message.textContent = "Please select a user type.";
-        return false;
-    }
 
     if (email2 === "" || password2 === "") {
         log_message.style.color = "red";

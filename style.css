@@ -31,11 +31,12 @@ body {
     width: 500px;
     padding: 3px;
     border: 2px solid white;
+    
 }
 
 .login-container {
     background-color: black;
-    height: 320px;
+    height: 300px;
     width: 505px;
     padding: 10px 0px;
     border: 2px solid white;

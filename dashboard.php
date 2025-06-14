@@ -77,6 +77,10 @@ $role = $_SESSION['user_role'];
         <div class="nav-buttons">
             <?php if ($role === 'employer'): ?>
                 <button onclick="location.href='post-job.php'">Post a Job</button>
+                <?php if ($_SESSION['user_role'] === 'employer'): ?>
+                <button onclick="location.href='view-applications.php'">View Applications</button>
+                <?php endif; ?>
+
                 <!-- Optional: View applicants -->
             <?php elseif ($role === 'jobseeker'): ?>
                 <button onclick="location.href='jobs.php'">View Jobs</button>
